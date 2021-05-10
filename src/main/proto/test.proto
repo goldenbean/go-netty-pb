@@ -1,0 +1,32 @@
+syntax = "proto3";
+package grpc;
+
+option java_package = "demo.pb";
+option java_outer_classname = "HelloWorldServiceProto";
+option java_multiple_files = true;
+
+
+
+//请求参数 基于序号的协议字段映射，所以字段可以乱序，可缺段
+message HelloRequest {
+  string name = 1;
+  string sex = 2;
+}
+
+//响应参数
+message HelloReply {
+  string message = 1;
+}
+
+message MessageRequest{
+  uint64 msg_id = 1;       //消息id
+  string from = 2;     //发送方uId
+  string to = 3;          //接收方uId
+  uint64 time = 4;     //时间戳(单位:毫秒)
+  uint32 msg_type = 5; //消息类型  1：纯文本  2：音频 3：视频 4：地理位置 5：其他
+  string content = 6; //消息内容
+  string url = 7;      //多媒体地址
+  string property = 8;  //附加属性
+  string from_nick = 9; //发送者昵称
+  string json = 10;       //附加的json串
+}
