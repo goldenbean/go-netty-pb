@@ -1,5 +1,7 @@
 syntax = "proto3";
 package netty;
+
+option go_package = "pkg/gen";
 option java_package = "com.dpb.netty.codec.protobuf";
 option java_outer_classname = "SubscribeRespProto";
 

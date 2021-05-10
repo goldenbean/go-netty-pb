@@ -1,12 +1,8 @@
-
+import com.dpb.netty.codec.protobuf.SubscribeReqProto;
+import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 import java.util.ArrayList;
 import java.util.List;
-
-import com.dpb.netty.codec.protobuf.SubscribeReqProto;
-
-import io.netty.channel.ChannelHandlerAdapter;
-import io.netty.channel.ChannelHandlerContext;
 
 public class SubReqClientHandler extends ChannelInboundHandlerAdapter {
 
@@ -28,7 +24,7 @@ public class SubReqClientHandler extends ChannelInboundHandlerAdapter {
     SubscribeReqProto.SubscribeReq.Builder builder = SubscribeReqProto.SubscribeReq.newBuilder();
     builder.setSubReqID(i);
     builder.setUserName("bobo");
-    builder.setPreductName("Netty Book For Protobuf");
+    builder.setProductName("Netty Book For Protobuf");
     List<String> address = new ArrayList<>();
     address.add("NanJing");
     address.add("BeiJing");

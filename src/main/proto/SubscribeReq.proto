@@ -1,11 +1,13 @@
 syntax = "proto3";
 package netty;
+
+option go_package = "pkg/gen";
 option java_package = "com.dpb.netty.codec.protobuf";
 option java_outer_classname = "SubscribeReqProto";
 
 message SubscribeReq{
   int32 subReqID = 1;
   string userName = 2;
-  string preductName = 3;
+  string productName = 3;
   repeated string address = 4;
 }

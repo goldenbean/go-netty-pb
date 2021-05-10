@@ -1,6 +1,4 @@
-
 import com.dpb.netty.codec.protobuf.SubscribeRespProto;
-
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;
@@ -45,8 +43,7 @@ public class SubReqClient {
   }
 
   /**
-   * @param args
-   * @throws Exception
+   *
    */
   public static void main(String[] args) throws Exception {
     int port = 8080;

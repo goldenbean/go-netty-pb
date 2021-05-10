@@ -8,9 +8,8 @@ public class TestSubscribeReqProto {
 
   /**
    * 编码
-   * @return
    */
-  private static byte[] encode(SubscribeReqProto.SubscribeReq req){
+  private static byte[] encode(SubscribeReqProto.SubscribeReq req) {
     return req.toByteArray();
   }
 
@@ -22,27 +21,26 @@ public class TestSubscribeReqProto {
 
   /**
    * 构建SubscribeReq对象
-   * @return
    */
-  private static SubscribeReqProto.SubscribeReq createSubscribeReq(){
+  private static SubscribeReqProto.SubscribeReq createSubscribeReq() {
     SubscribeReqProto.SubscribeReq.Builder builder = SubscribeReqProto.SubscribeReq.newBuilder();
     builder.setSubReqID(1);
-    builder.setUserName("bobo");
-    builder.setPreductName("Netty");
+    builder.setUserName("bob");
+    builder.setProductName("Netty");
     List<String> address = new ArrayList<>();
     address.add("beijing");
     address.add("guangzhou");
-    address.add("shezheng");
+    address.add("shenzhen");
     builder.addAllAddress(address);
     return builder.build();
   }
 
   public static void main(String[] args) throws InvalidProtocolBufferException {
     SubscribeReqProto.SubscribeReq req = createSubscribeReq();
-    System.out.println("编码前:"+req.toString());
+    System.out.println("编码前:" + req.toString());
     SubscribeReq req2 = decode(encode(req));
-    System.out.println("编码后:"+req);
-    System.out.println("编码后:"+req2);
+    System.out.println("编码后:" + req);
+    System.out.println("编码后:" + req2);
     System.out.println(req2.equals(req));
   }
 }
