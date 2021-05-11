@@ -23,7 +23,7 @@ public class SubReqClientHandler extends ChannelInboundHandlerAdapter {
   private SubscribeReqProto.SubscribeReq subReq(int i) {
     SubscribeReqProto.SubscribeReq.Builder builder = SubscribeReqProto.SubscribeReq.newBuilder();
     builder.setSubReqID(i);
-    builder.setUserName("bobo");
+    builder.setUserName("bob");
     builder.setProductName("Netty Book For Protobuf");
     List<String> address = new ArrayList<>();
     address.add("NanJing");
